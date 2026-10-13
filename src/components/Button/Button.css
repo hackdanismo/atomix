@@ -1,0 +1,71 @@
+
+.atomix-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+/* Sizes */
+
+.atomix-button--sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.atomix-button--md {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.atomix-button--lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Variants */
+
+.atomix-button--primary {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.atomix-button--primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.atomix-button--secondary {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.atomix-button--secondary:hover:not(:disabled) {
+  background-color: #d1d5db;
+}
+
+.atomix-button--ghost {
+  background-color: transparent;
+  color: #2563eb;
+}
+
+.atomix-button--ghost:hover:not(:disabled) {
+  background-color: #eff6ff;
+}
+
+/* States */
+
+.atomix-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.atomix-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

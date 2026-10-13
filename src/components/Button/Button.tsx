@@ -1,3 +1,16 @@
+/**
+ * A reusable Button component.
+ *
+ * Supports native HTML button attributes and Atomix-specific
+ * variants and sizes.
+ *
+ * @example
+ * <Button>Save</Button>
+ * <Button variant="secondary" size="sm">Cancel</Button>
+ * <Button variant="ghost" disabled>Disabled</Button>
+ * <Button type="submit">Submit</Button>
+ */
+
 /*
  * This utility type provided with React tells TypeScript that we are importing this for type checking.
  * Types do not exist at runtime, TypeScript removes this import from the compiled JavaScript.
@@ -6,6 +19,8 @@
  * Saves us from manually defining every native button property.
  */
 import type { ComponentPropsWithRef } from 'react'
+// Import the Button CSS stylesheet
+import './Button.css'
 
 /*
  * Define the props for the Button component.
@@ -25,7 +40,10 @@ import type { ComponentPropsWithRef } from 'react'
  * The export keyword makes the type available to other files e.g:
  * import type { ButtonProps } from 'atomix'
  */
-export type ButtonProps = ComponentPropsWithRef<'button'>
+export type ButtonProps = ComponentPropsWithRef<'button'> & {
+    variant?: 'primary' | 'secondary' | 'ghost'
+    size?: 'sm' | 'md' | 'lg'
+}
 
 // Declare the Button component and export it for use in other files.
 
@@ -37,11 +55,27 @@ export type ButtonProps = ComponentPropsWithRef<'button'>
  */
 export function Button({
     type = 'button',
+    variant = 'primary',
+    size = 'md',
+    className = '',
     children,
     ...props
 }: ButtonProps) {
+    const classes = [
+        'atomix-button',
+        `atomix-button--${variant}`,
+        `atomix-button--${size}`,
+        className,
+    ].filter(Boolean).join(' ')
+
     return (
-        <button type={type} {...props}>{children}</button>
+        <button 
+            type={type}
+            className={classes}
+            {...props}
+            >
+                {children}
+            </button>
     )
 }
 
