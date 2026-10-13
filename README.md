@@ -59,3 +59,16 @@ $ npm create vite@latest atomix -- --template react-ts
 The `--template` is used to tell `Vite` which starter template to use when creating the project. The `react-ts` template selects `React` with `TypeScript`.
 
 As we are building a component library, all initial contents of the `src/` directory have been removed following the `Vite` setup process.
+
+### Setup Storybook
+`Storybook` allows components to be rendered outside of an application. To install `Storybook`:
+
+```shell
+$ npm create storybook@latest
+```
+
+Once installed, to run `Storybook` here: [http://127.0.0.1:6006/](http://127.0.0.1:6006/):
+
+```shell
+$ npm run storybook
+```
