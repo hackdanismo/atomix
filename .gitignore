@@ -50,3 +50,4 @@ temp/
 # Playwright test artifacts (if used)
 playwright-report/
 test-results/
+*storybook.log
