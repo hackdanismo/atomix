@@ -37,6 +37,7 @@ export type ButtonProps = ComponentPropsWithRef<'button'>
  */
 export function Button({
     type = 'button',
+    children,
     ...props
 }: ButtonProps) {
     return (
